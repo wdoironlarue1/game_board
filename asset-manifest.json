@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/game_board/static/css/main.5f361e03.chunk.css",
+    "main.js": "/game_board/static/js/main.15c7e853.chunk.js",
+    "main.js.map": "/game_board/static/js/main.15c7e853.chunk.js.map",
+    "runtime-main.js": "/game_board/static/js/runtime-main.77c3fa39.js",
+    "runtime-main.js.map": "/game_board/static/js/runtime-main.77c3fa39.js.map",
+    "static/js/2.01d5415b.chunk.js": "/game_board/static/js/2.01d5415b.chunk.js",
+    "static/js/2.01d5415b.chunk.js.map": "/game_board/static/js/2.01d5415b.chunk.js.map",
+    "index.html": "/game_board/index.html",
+    "precache-manifest.76c7be97ada2200873e4b743f157f011.js": "/game_board/precache-manifest.76c7be97ada2200873e4b743f157f011.js",
+    "service-worker.js": "/game_board/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/game_board/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.01d5415b.chunk.js.LICENSE.txt": "/game_board/static/js/2.01d5415b.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/game_board/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.77c3fa39.js",
+    "static/js/2.01d5415b.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.15c7e853.chunk.js"
+  ]
+}
