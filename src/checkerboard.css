@@ -1,0 +1,16 @@
+#blackChecker {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: 2px solid beige;
+  background-color: rgb(37, 37, 35);
+  display: inline-block;
+}
+
+#whiteChecker {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: beige;
+  display: inline-block;
+}

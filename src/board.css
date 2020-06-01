@@ -1,0 +1,12 @@
+.whiteSpace {
+  background-color: white;
+  height: 50px;
+  width: 50px;
+}
+
+.blackSpace {
+  background-color: black;
+  height: 50px;
+  width: 50px;
+  color: black;
+}

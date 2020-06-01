@@ -1,0 +1,26 @@
+.StartPage {
+  background-color: #3b65b9;
+}
+
+.StartPage-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+#Buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#bottomCheckerboard {
+  align-self: flex-end;
+}
+
+#topCheckerboard {
+  align-self: flex-start;
+}

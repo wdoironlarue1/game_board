@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import StartPage from "./startPage.js";
+import Checkerboard from "./checkerboard.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    container: StartPage,
+  };
+
+  handleClickCheckersBtn = () => {
+    this.setState({
+      container: Checkerboard,
+    });
+  };
+
+  handleClickReturnBtn = () => {
+    this.setState({
+      container: StartPage,
+    });
+  };
+
+  handleClickChessBtn = () => {
+    this.setState({
+      container: Checkerboard,
+    });
+  };
+
+  render() {
+    const Container = this.state.container;
+    // console.log(Container === St);
+    const Props =
+      Container === StartPage
+        ? {
+            handleClickCheckersBtn: this.handleClickCheckersBtn,
+            handleClickChessBtn: this.handleClickChessBtn,
+          }
+        : { handleClickReturnBtn: this.handleClickReturnBtn };
+    return <Container {...Props} />;
+  }
 }
 
 export default App;
