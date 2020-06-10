@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./checker.css";
 
 class Checker extends React.Component {
   static propTypes = {
@@ -7,27 +8,31 @@ class Checker extends React.Component {
     row: PropTypes.number,
     column: PropTypes.number,
     setSelectedPiece: PropTypes.func,
-  };
-  state = {
-    row: this.props.row,
-    column: this.props.column,
+    isSelected: PropTypes.bool,
+    isKing: PropTypes.bool,
   };
 
-  handleSelectChecker = (e) => {
+  handleSelectChecker = () => {
     this.props.setSelectedPiece(this);
-  };
-
-  handleMoveChecker = (row, column) => {
-    this.setState({ row, column });
   };
 
   render() {
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
         <span
-          onClick={(e) => this.handleSelectChecker(e)}
-          id={this.props.color === "white" ? "whiteChecker" : "blackChecker"}
-        ></span>
+          onClick={this.handleSelectChecker}
+          className={
+            (this.props.color === "white" ? "white checker" : "black checker") +
+            (this.props.isSelected ? " selected" : "") +
+            (this.props.isKing ? " king" : "")
+          }
+        >
+          {this.props.isKing && (
+            <div className="king">
+              <i className="fas fa-crown"></i>
+            </div>
+          )}
+        </span>
       </div>
     );
   }

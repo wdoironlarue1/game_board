@@ -7,11 +7,27 @@ import React from "react";
 import PropTypes from "prop-types";
 import Board from "./board.js";
 import "./checkerboard.css";
+import { WHITE, BLACK } from "./constants.js";
 import GamePiece from "./gamePiece.js";
+import MoveHistory from "./moveHistory.js";
 
 class Checkerboard extends React.Component {
   static propTypes = {
     handleClickReturnBtn: PropTypes.func,
+  };
+  state = {
+    turn: WHITE,
+    moveHistory: [],
+  };
+
+  isCorrectTurn = (piece) => {
+    return piece.color === this.state.turn;
+  };
+
+  updateTurn = () => {
+    this.setState((prevState) => ({
+      turn: prevState.turn === WHITE ? BLACK : WHITE,
+    }));
   };
 
   getStartingPieces = () => {
@@ -19,46 +35,46 @@ class Checkerboard extends React.Component {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 8; j++) {
         if ((i + j) % 2 === 1) {
-          pieces.push(
-            new GamePiece("white", i, j, "checker", this.setSelectedPiece)
-          );
+          pieces.push(new GamePiece(WHITE, i, j, "checker", false));
         }
       }
     }
     for (let i = 5; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         if ((i + j) % 2 === 1) {
-          pieces.push(
-            new GamePiece("black", i, j, "checker", this.setSelectedPiece)
-          );
+          pieces.push(new GamePiece(BLACK, i, j, "checker", false));
         }
       }
     }
     return pieces;
   };
 
-  handleSelectChecker = (e) => {
-    // console.log(e.target);
-  };
-
-  setSelectedPiece = (piece) => {
-    this.setState({ selectedPiece: piece });
-    piece.handleMovePiece(3, 1);
-    this.forceUpdate();
-  };
-
-  state = {
-    pieces: this.getStartingPieces(),
-    selectedPiece: {},
+  addToMoveHistory = (piece, row, column) => {
+    this.setState((prevState) => ({
+      moveHistory: [...prevState.moveHistory, piece],
+    }));
   };
 
   render() {
     return (
-      <div>
-        <Board
-          pieces={this.state.pieces}
-          selectedPiece={this.state.selectedPiece}
-        ></Board>
+      <div style={{ textAlign: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          turn: <div className={this.state.turn + "Square"} />
+          <Board
+            isCorrectTurn={this.isCorrectTurn}
+            updateTurn={this.updateTurn}
+            startingPieces={this.getStartingPieces()}
+            returnToHomePage={this.props.handleClickReturnBtn}
+            addToMoveHistory={this.addToMoveHistory}
+          />
+          <MoveHistory moves={["hey"]}></MoveHistory>
+        </div>
         <button onClick={this.props.handleClickReturnBtn}>
           Go Back to Start Page
         </button>

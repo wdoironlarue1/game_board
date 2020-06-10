@@ -28,7 +28,6 @@ class App extends React.Component {
 
   render() {
     const Container = this.state.container;
-    // console.log(Container === St);
     const Props =
       Container === StartPage
         ? {
