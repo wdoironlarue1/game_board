@@ -1,14 +1,11 @@
 .StartPage {
-  background-color: #3b65b9;
-}
-
-.StartPage-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   justify-content: space-between;
+  background-color: #3b65b9;
 }
 
 #Buttons {

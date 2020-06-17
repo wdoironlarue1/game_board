@@ -11,39 +11,37 @@ class StartPage extends React.Component {
   render() {
     return (
       <div className="StartPage">
-        <div className="StartPage-header">
-          <img
-            id="topCheckerboard"
-            width="200"
-            height="200"
-            src={require("./checkerboard.png")}
-            alt="Woo!"
-          />
-          <div>
-            <h1>Choose what game you'd like to play</h1>
-            <div className="Buttons">
-              <button
-                onClick={this.props.handleClickChessBtn}
-                style={{ fontSize: "30px" }}
-              >
-                chess
-              </button>
-              <button
-                onClick={this.props.handleClickCheckersBtn}
-                style={{ fontSize: "30px" }}
-              >
-                checkers
-              </button>
-            </div>
+        <img
+          id="topCheckerboard"
+          width="200"
+          height="200"
+          src={require("./checkerboard.png")}
+          alt="Woo!"
+        />
+        <div>
+          <h1>Choose what game you'd like to play</h1>
+          <div id="Buttons">
+            <button
+              onClick={this.props.handleClickChessBtn}
+              style={{ fontSize: "30px" }}
+            >
+              chess
+            </button>
+            <button
+              onClick={this.props.handleClickCheckersBtn}
+              style={{ fontSize: "30px" }}
+            >
+              checkers
+            </button>
           </div>
-          <img
-            id="bottomCheckerboard"
-            width="200"
-            height="200"
-            src={require("./checkerboard.png")}
-            alt="Woo!"
-          />
         </div>
+        <img
+          id="bottomCheckerboard"
+          width="200"
+          height="200"
+          src={require("./checkerboard.png")}
+          alt="Woo!"
+        />
       </div>
     );
   }
