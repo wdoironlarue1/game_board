@@ -9,3 +9,4 @@ Currently it only has checkers but most of the components can be reused to be us
 - add tests
 - improve visual aspect
 - maybe add some animations
+- create a p v computer option??
