@@ -4,7 +4,7 @@ This project is a simple board game web app at https://wdoironlarue1.github.io/g
 
 Currently it only has checkers but most of the components can be reused to be used for other board games like chess.
 
-# Possible improvements:
+### Possible improvements:
 - implement chess game
 - add tests
 - improve visual aspect
