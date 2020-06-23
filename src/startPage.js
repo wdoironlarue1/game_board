@@ -2,6 +2,8 @@ import React from "react";
 import "./startPage.css";
 import PropTypes from "prop-types";
 
+const GITHUB_LINK = "https://github.com/wdoironlarue1/game_board";
+
 class StartPage extends React.Component {
   static propTypes = {
     handleClickCheckersBtn: PropTypes.func,
@@ -18,6 +20,9 @@ class StartPage extends React.Component {
           src={require("./checkerboard.png")}
           alt="Woo!"
         />
+        <a href={GITHUB_LINK} style={{ color: "black" }} target="_blank">
+          check out the source code here
+        </a>
         <div>
           <h1>Choose what game you'd like to play</h1>
           <div id="Buttons">
