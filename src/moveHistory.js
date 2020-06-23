@@ -2,16 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { WHITE } from "./constants.js";
 
-class MoveHistory extends React.Component {
-  static propTypes = {
-    moves: PropTypes.array,
-    undoMove: PropTypes.func,
-  };
-
-  getRowsFromMoves = () => {
+const MoveHistory = (props) => {
+  const getRowsFromMoves = () => {
     let rows = [];
-    for (let i = 0; i < this.props.moves.length; i++) {
-      let move = this.props.moves[i];
+    for (let i = 0; i < props.moves.length; i++) {
+      let move = props.moves[i];
       rows.push(
         <tr key={i}>
           <td style={{ textAlign: "center", width: "150px" }}>
@@ -34,38 +29,39 @@ class MoveHistory extends React.Component {
     return rows;
   };
 
-  render() {
-    return (
-      <div>
-        <table
+  return (
+    <div>
+      <table
+        style={{
+          border: "solid",
+          borderCollapse: "collapse",
+          width: "150px",
+          backgroundColor: "white",
+        }}
+      >
+        <thead
           style={{
-            border: "solid",
-            borderCollapse: "collapse",
-            width: "150px",
-            backgroundColor: "white",
+            display: "block",
           }}
         >
-          <thead
-            style={{
-              display: "block",
-            }}
-          >
-            <tr>
-              <td style={{ textAlign: "center", width: "150px" }}>
-                <p>Move History</p>
-              </td>
-            </tr>
-          </thead>
-          <tbody
-            style={{ display: "block", height: "375px", overflowY: "auto" }}
-          >
-            {this.getRowsFromMoves()}
-          </tbody>
-        </table>
-        <button onClick={this.props.undoMove}>undo</button>
-      </div>
-    );
-  }
-}
+          <tr>
+            <td style={{ textAlign: "center", width: "150px" }}>
+              <p>Move History</p>
+            </td>
+          </tr>
+        </thead>
+        <tbody style={{ display: "block", height: "375px", overflowY: "auto" }}>
+          {getRowsFromMoves()}
+        </tbody>
+      </table>
+      <button onClick={props.undoMove}>undo</button>
+    </div>
+  );
+};
+
+MoveHistory.propTypes = {
+  moves: PropTypes.array,
+  undoMove: PropTypes.func,
+};
 
 export default MoveHistory;

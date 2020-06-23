@@ -2,7 +2,7 @@ import React from "react";
 import "./board.css";
 import PropTypes from "prop-types";
 import { getPiecePositions } from "./helperFuncs.js";
-import Checker from "./checker";
+import Checker from "./checkers/checker";
 
 class Board extends React.Component {
   static propTypes = {

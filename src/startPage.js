@@ -24,6 +24,7 @@ class StartPage extends React.Component {
             <button
               onClick={this.props.handleClickChessBtn}
               style={{ fontSize: "30px" }}
+              disabled={true}
             >
               chess
             </button>

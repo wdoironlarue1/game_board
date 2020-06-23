@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import StartPage from "./startPage.js";
-import Checkerboard from "./checkerboard.js";
+import Checkerboard from "./checkers/checkerboard.js";
 
 class App extends React.Component {
   state = {
@@ -20,6 +20,7 @@ class App extends React.Component {
     });
   };
 
+  // maybe implement later
   handleClickChessBtn = () => {
     this.setState({
       container: Checkerboard,
