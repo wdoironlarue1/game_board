@@ -20,7 +20,7 @@ class StartPage extends React.Component {
           src={require("./checkerboard.png")}
           alt="Woo!"
         />
-        <a href={GITHUB_LINK} style={{ color: "black" }} target="_blank">
+        <a href={GITHUB_LINK} style={{ color: "black" }} target="_blank" rel="noopener noreferrer"> 
           check out the source code here
         </a>
         <div>
