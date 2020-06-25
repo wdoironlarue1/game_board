@@ -9,4 +9,5 @@ Currently it only has checkers but most of the components can be reused to be us
 - add tests
 - improve visual aspect
 - maybe add some animations
+- use css compiler like less or sass
 - create a p v computer option??
